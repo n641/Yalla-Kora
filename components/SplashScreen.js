@@ -5,7 +5,7 @@ import colors from '../constant/colors';
 import {Ionicons} from"@expo/vector-icons";
 
 
-import Logo from '../assets/logo.jpg';
+import Logo from '../assets/logo.png';
 import Home from '../Screens/Login';
 
 const BGColor = colors.primary
@@ -69,8 +69,8 @@ export default function SplashScreen() {
                     {
                         // Moving to Right Most...
                         toValue: {
-                            x: (Dimensions.get("window").width / 5), // move logo right left
-                            y: (Dimensions.get('window').height +width/2.50) // move logo top down
+                            x: (Dimensions.get("window").width / 50) ,
+                            y: (Dimensions.get('window').height ) + width/5
                         },
                         useNativeDriver: true
                     }
@@ -80,9 +80,9 @@ export default function SplashScreen() {
                     {
                         // Moving to Right Most...
                         toValue: {
-                            x:(Dimensions.get("window").width / 2)-250  ,
+                            x: 0,
                             // Since image size is 100...
-                            y: (Dimensions.get('window').height /1.23)  
+                            y: (Dimensions.get('window').height / 2) - 90
                         },
                         useNativeDriver: true
                     }
@@ -125,10 +125,11 @@ export default function SplashScreen() {
                     alignItems: 'center',
                     justifyContent: 'center',
                 }}>
-                    <Animated.View  style={{
-                        width: width,
-                        height: height/1.6,
+                    <Animated.Image source={Logo} style={{
+                        width: 400,
+                        height: 250,
                         marginBottom: 20,
+                        borderRadius:50,
                         transform: [
                             { translateX: moveLogo.x },
                             { translateY: moveLogo.y },
@@ -136,9 +137,9 @@ export default function SplashScreen() {
 
                         ]
                     }}>
-                        <Ionicons name="basketball-outline" color={colors.secondry} size={200} />
-                    </Animated.View>
-
+                    </Animated.Image>
+                    
+{/* 
                     <Animated.Text style={{
                         fontSize: 25,
                         fontWeight: 'bold',
@@ -149,7 +150,7 @@ export default function SplashScreen() {
                             { translateX: moveTitle.x },
                             { scale: scaleTitle }
                         ]
-                    }}>Yalla Kora</Animated.Text>
+                    }}>Yalla Kora</Animated.Text> */}
 
                 </Animated.View>
 

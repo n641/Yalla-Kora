@@ -17,7 +17,7 @@ export default function Login() {
                 <Image source={backGround} style={styles.Image} />
             </View>
 
-            <View style={{ height: height / 10 }} />
+            <View style={{ height: height / 9 }} />
 
             <View style={styles.containerButton}>
                 <CButton title='Login' textColor='white' color={colors.secondry} borderColor={0} onPress={() => { }} />
@@ -40,7 +40,7 @@ export default function Login() {
 const styles = StyleSheet.create({
     Image: {
         width: width,
-        height: height / 1.6,
+        height: height / 1.7,
         borderBottomLeftRadius: 150,
         borderBottomRightRadius: 150
     },

@@ -11,7 +11,7 @@ const Stack = createNativeStackNavigator();
 const Navigation = () => {
     return(
     <NavigationContainer >
-        <Stack.Navigator screenOptions={{headerShown:false}}>
+        <Stack.Navigator screenOptions={{headerShown:false , animation:'slide_from_bottom'}}  >
             <Stack.Screen name="SplashScreen" component={SplashScreen} />
             <Stack.Screen name="login" component={Login} />
             <Stack.Screen name="SignUp" component={SignUp} />

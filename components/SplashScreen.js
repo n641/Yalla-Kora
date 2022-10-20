@@ -44,7 +44,7 @@ export default function SplashScreen() {
                     startAnimation,
                     {
                         // For same Height for non safe Area Devices...
-                        toValue: -Dimensions.get('window').height + (edges.top),
+                        toValue: -Dimensions.get('window').height ,
                         useNativeDriver: true
                     }
                 ),
@@ -70,7 +70,8 @@ export default function SplashScreen() {
                         // Moving to Right Most...
                         toValue: {
                             x: (Dimensions.get("window").width / 50) ,
-                            y: (Dimensions.get('window').height ) + width/5
+                            y: (Dimensions.get('window').height ) + width/4 +25
+
                         },
                         useNativeDriver: true
                     }
@@ -127,7 +128,7 @@ export default function SplashScreen() {
                 }}>
                     <Animated.Image source={Logo} style={{
                         width: 400,
-                        height: 250,
+                        height: 280,
                         marginBottom: 20,
                         borderRadius:50,
                         transform: [
@@ -139,9 +140,9 @@ export default function SplashScreen() {
                     }}>
                     </Animated.Image>
                     
-{/* 
+
                     <Animated.Text style={{
-                        fontSize: 25,
+                        fontSize: 30,
                         fontWeight: 'bold',
                         color: 'black',
                         fontStyle:'italic',
@@ -150,7 +151,7 @@ export default function SplashScreen() {
                             { translateX: moveTitle.x },
                             { scale: scaleTitle }
                         ]
-                    }}>Yalla Kora</Animated.Text> */}
+                    }}>Yalla Kora</Animated.Text>
 
                 </Animated.View>
 

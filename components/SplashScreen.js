@@ -1,19 +1,20 @@
 import React, { useEffect, useRef } from 'react'
-import { Animated, Dimensions, Image, Text, View  } from "react-native";
+import { Animated, Dimensions, Image, Text, View } from "react-native";
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import colors from '../constant/colors';
-import {Ionicons} from"@expo/vector-icons";
+import { Ionicons } from "@expo/vector-icons";
 
 
 import Logo from '../assets/logo.png';
-import Home from '../Screens/Login';
+import Login from '../Screens/Login';
+import Navigation from '../Navigator/Navigation';
 
 const BGColor = colors.primary
 
 const width = Dimensions.get('window').width;
 const height = Dimensions.get('window').height;
 
-export default function SplashScreen() {
+export default function SplashScreen({navigation}) {
 
     // SafeArea Value...
     const edges = useSafeAreaInsets();
@@ -44,7 +45,7 @@ export default function SplashScreen() {
                     startAnimation,
                     {
                         // For same Height for non safe Area Devices...
-                        toValue: -Dimensions.get('window').height ,
+                        toValue: -Dimensions.get('window').height,
                         useNativeDriver: true
                     }
                 ),
@@ -60,7 +61,7 @@ export default function SplashScreen() {
                     scaleTitle,
                     {
                         // Scaling to 0.8
-                        toValue: 1.1,
+                        toValue: 0,
                         useNativeDriver: true
                     }
                 ),
@@ -69,8 +70,8 @@ export default function SplashScreen() {
                     {
                         // Moving to Right Most...
                         toValue: {
-                            x: (Dimensions.get("window").width / 50) ,
-                            y: (Dimensions.get('window').height ) + width/4 +25
+                            x: (Dimensions.get("window").width / 50),
+                            y: (Dimensions.get('window').height) + width / 4 + 25
 
                         },
                         useNativeDriver: true
@@ -103,7 +104,7 @@ export default function SplashScreen() {
     }, [])
 
 
- return (
+    return (
 
         <View style={{
             position: 'absolute',
@@ -126,11 +127,12 @@ export default function SplashScreen() {
                     alignItems: 'center',
                     justifyContent: 'center',
                 }}>
+
                     <Animated.Image source={Logo} style={{
                         width: 400,
                         height: 280,
                         marginBottom: 20,
-                        borderRadius:50,
+                        borderRadius: 50,
                         transform: [
                             { translateX: moveLogo.x },
                             { translateY: moveLogo.y },
@@ -139,13 +141,13 @@ export default function SplashScreen() {
                         ]
                     }}>
                     </Animated.Image>
-                    
+
 
                     <Animated.Text style={{
                         fontSize: 30,
                         fontWeight: 'bold',
                         color: 'black',
-                        fontStyle:'italic',
+                        fontStyle: 'italic',
                         transform: [
                             { translateY: moveTitle.y },
                             { translateX: moveTitle.x },
@@ -170,7 +172,7 @@ export default function SplashScreen() {
                 ]
             }}>
 
-                <Home></Home>
+               <Login navigation={navigation}/>
 
             </Animated.View>
 

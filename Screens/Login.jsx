@@ -25,7 +25,10 @@ export default function Login({navigation}) {
                     <CButton title='Login' textColor='white' color={colors.secondry} borderColor={0} onPress={() => { 
                         navigation.navigate('SignUp')
                     }} />
-                    <CButton title='SignUp' textColor='black' onPress={() => { }} />
+                    <CButton title='SignUp' textColor='black' onPress={() => {
+                        navigation.navigate('Signin')
+
+                     }} />
                 </View>
 
                 <View style={styles.Footer}>

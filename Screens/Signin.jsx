@@ -14,7 +14,7 @@ import {
   
   const width = Dimensions.get('window').width;
   const height = Dimensions.get('window').height;
-  const Signin = () => {
+  const Signin = ({navigation}) => {
   
     const [email, setemail] = useState('');
     const [password, setpassword] = useState('')

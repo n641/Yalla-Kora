@@ -23,10 +23,10 @@ export default function Login({navigation}) {
 
                 <View style={styles.containerButton}>
                     <CButton title='Login' textColor='white' color={colors.secondry} borderColor={0} onPress={() => { 
-                        navigation.navigate('SignUp')
+                        navigation.navigate('Signin')
                     }} />
                     <CButton title='SignUp' textColor='black' onPress={() => {
-                        navigation.navigate('Signin')
+                        navigation.navigate('SignUp')
 
                      }} />
                 </View>
